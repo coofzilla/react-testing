@@ -1,14 +1,12 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { shallow } from "enzyme";
 import App from "../App";
+import CommentBox from "../CommentBox";
 
-//JSDOM, creating div as a container f/App
+//wrapped is a component but w/additional functionality
 it("shows a comment box", () => {
-  const div = document.createElement("div");
+  //shallow render just component and no children
+  const wrapped = shallow(<App />);
 
-  ReactDOM.render(<App />, div);
-  //look inside div, check to see if comment box there
-  // expect(div.innerHTML).toContain("Comment Box");
-  //enzyme react tester from airbnb
-  ReactDOM.unmountComponentAtNode(div);
+  expect(wrapped.find(CommentBox).length).toEqual(1);
 });
