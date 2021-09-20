@@ -8,7 +8,7 @@ it("shows a comment box", () => {
 
   ReactDOM.render(<App />, div);
   //look inside div, check to see if comment box there
-  expect(div.innerHTML).toContain("Comment Box");
-
+  // expect(div.innerHTML).toContain("Comment Box");
+  //enzyme react tester from airbnb
   ReactDOM.unmountComponentAtNode(div);
 });
